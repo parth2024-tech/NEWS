@@ -1,0 +1,19 @@
+name: Watchdog - Failure Monitor
+
+on:
+  schedule:
+    - cron: '0 9 * * *' # 09:00 UTC daily (1 hour after main run)
+  workflow_dispatch:
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Alert on Failure
+      # In Phase 1 we will just mock the watchdog script or run a basic curl.
+      # When telegram is implemented in Phase 3, this will use Telegram.
+      # For now, it will check if the main action failed (this would require GitHub API).
+      # A simple python script can check Supabase for last_confirmed timestamp.
+      run: |
+        echo "Checking Supabase for last run timestamp..."
+        echo "(To be fully implemented with Telegram alerts in Phase 3)"
