@@ -1,3 +1,10 @@
+\"\"\"
+AI Deal Agent Orchestrator
+
+This is the main entry point for the 10-layer AI Deal Agent.
+It handles sequential execution of scraping, deduplication, 
+LLM extraction, verification, database syncing, and delivery.
+\"\"\"
 import yaml
 import os
 import argparse
