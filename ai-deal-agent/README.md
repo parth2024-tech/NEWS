@@ -2,14 +2,20 @@
 
 A 10-layer automated agent that scrapes, extracts, and verifies AI tool deals, free credits, and startup programs, notifying you via email (and eventually Telegram).
 
-## Setup (Phase 1)
+## Setup
 
-1. Install dependencies:
+1. **Install dependencies:**
+   You can install dependencies manually or use the provided Makefile:
    ```bash
-   pip install -r requirements.txt
+   make install
    ```
 
-2. Set up environment variables (or add to `.env` if testing locally):
+2. **Environment Variables:**
+   Copy the example environment file and fill in your API keys:
+   ```bash
+   cp .env.example .env
+   ```
+   Required keys:
    - `SUPABASE_URL`
    - `SUPABASE_KEY`
    - `ANTHROPIC_API_KEY`
@@ -18,7 +24,7 @@ A 10-layer automated agent that scrapes, extracts, and verifies AI tool deals, f
    - `EMAIL_FROM`
    - `EMAIL_TO`
 
-3. Supabase Schema Setup:
+3. **Supabase Schema Setup:**
    Execute the following SQL in your Supabase SQL editor to create the required table:
    ```sql
    CREATE TABLE deals (
